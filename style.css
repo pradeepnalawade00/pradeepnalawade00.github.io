@@ -1417,3 +1417,194 @@ input[type="month"]::-webkit-calendar-picker-indicator { filter: invert(1); opac
   .stat-2 { top: -20px;    left: -10px; }
   .stat-3 { bottom: -20px; right: -10px; }
 }
+
+/* ===================================================
+   AVATAR PHOTO
+   =================================================== */
+.avatar-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ===================================================
+   THREE.JS HERO CANVAS
+   =================================================== */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===================================================
+   3D TEXT — Hero Name
+   =================================================== */
+.text-3d {
+  text-shadow:
+    1px 1px 0 rgba(6,200,232,0.4),
+    2px 2px 0 rgba(6,200,232,0.3),
+    3px 3px 0 rgba(6,200,232,0.2),
+    4px 4px 0 rgba(6,200,232,0.1),
+    0 0 40px rgba(6,200,232,0.35);
+  transition: text-shadow 0.3s ease;
+}
+.text-3d:hover {
+  text-shadow:
+    2px 2px 0 rgba(6,200,232,0.5),
+    4px 4px 0 rgba(6,200,232,0.35),
+    6px 6px 0 rgba(6,200,232,0.2),
+    8px 8px 0 rgba(6,200,232,0.1),
+    0 0 60px rgba(6,200,232,0.5);
+}
+
+/* ===================================================
+   FLOATING 3D ICONS
+   =================================================== */
+.float-3d {
+  transform-style: preserve-3d;
+  will-change: transform;
+  filter: drop-shadow(0 8px 16px rgba(6,200,232,0.3));
+}
+
+@keyframes float3d-1 {
+  0%,100% { transform: translateY(0) rotateX(0deg); }
+  25%     { transform: translateY(-18px) rotateX(10deg); }
+  75%     { transform: translateY(10px) rotateX(-5deg); }
+}
+@keyframes float3d-2 {
+  0%,100% { transform: translateY(0) rotateY(0deg); }
+  50%     { transform: translateY(-22px) rotateY(15deg); }
+}
+
+/* ===================================================
+   DOMAIN GROUPS — Projects
+   =================================================== */
+.domain-group { margin-bottom: 56px; }
+.domain-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  background: rgba(6,200,232,0.07);
+  border: 1px solid rgba(6,200,232,0.2);
+  padding: 8px 20px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.domain-icon { font-size: 1rem; }
+
+/* ===================================================
+   FLIP CARDS — 3D Card Flip Effect
+   =================================================== */
+.project-card-wrapper { perspective: 1000px; }
+
+.flip-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  will-change: transform;
+  min-height: 320px;
+}
+.flip-card:hover { transform: rotateY(180deg) !important; }
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+.flip-front {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+}
+.flip-back {
+  background: linear-gradient(135deg, #0d1f3c 0%, #0a1628 100%);
+  border: 1px solid rgba(6,200,232,0.3);
+  transform: rotateY(180deg);
+  justify-content: space-between;
+}
+.flip-hint {
+  margin-top: auto;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding-top: 12px;
+}
+.flip-back-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(6,200,232,0.2);
+}
+.flip-tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.flip-tech-item {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  background: rgba(6,200,232,0.05);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(6,200,232,0.1);
+}
+.flip-btn {
+  margin-top: 16px;
+  padding: 10px 20px;
+  font-size: 0.875rem;
+  justify-content: center;
+}
+
+/* Glow variants */
+.glow-purple { background: radial-gradient(circle at 30% 30%, rgba(139,92,246,0.25) 0%, transparent 70%); }
+.glow-green  { background: radial-gradient(circle at 30% 30%, rgba(34,197,94,0.2)  0%, transparent 70%); }
+.glow-orange { background: radial-gradient(circle at 30% 30%, rgba(249,115,22,0.2) 0%, transparent 70%); }
+.glow-cyan   { background: radial-gradient(circle at 30% 30%, rgba(6,200,232,0.2)  0%, transparent 70%); }
+.glow-amber  { background: radial-gradient(circle at 30% 30%, rgba(245,158,11,0.2) 0%, transparent 70%); }
+
+/* ===================================================
+   PASSWORD MODAL
+   =================================================== */
+.cert-pwd-box { max-width: 400px !important; }
+
+/* ===================================================
+   BTN SM
+   =================================================== */
+.btn-sm {
+  padding: 9px 18px;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ===================================================
+   MOBILE — disable heavy 3D
+   =================================================== */
+@media (max-width: 768px) {
+  #hero-canvas { display: none; }
+  .flip-card:hover { transform: none !important; }
+  .flip-back { display: none; }
+  .flip-front { position: relative; inset: auto; }
+  .flip-card { min-height: auto; transform-style: flat; }
+  .float-3d { display: none; }
+  .text-3d  { text-shadow: 0 0 30px rgba(6,200,232,0.3); }
+}
